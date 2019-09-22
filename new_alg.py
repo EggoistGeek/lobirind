@@ -1,6 +1,6 @@
 import random
 
-SIZE = 20
+SIZE = 101
 # делаем матрицу
 raw_matrix = [[0 for i in range(SIZE)] for j in range(SIZE)]
 raw_matrix[0][0] = 1
