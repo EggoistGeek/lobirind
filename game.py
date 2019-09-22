@@ -3,10 +3,6 @@ import random
 
 size = 3
 
-def is_way(matrice):
-	
-
-#def sort(raw_matrice):
 
 		
 
