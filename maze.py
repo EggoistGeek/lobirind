@@ -2,13 +2,15 @@ from tkinter import *
 import random
 import n_backend
 import velikiyrandom
+import mariostyle
+import zaebal
 
 # Размер каждого блока (стена и проход) в пикселях
-blockSize = 10
+blockSize = 4
 
 # Отрисовка матрицы на канвасе
 def DisplayMaze(matrix, size):
-	c.delete("all")
+	#c.delete("all")
 	for x in range(0, size):
 		for y in range(0, size):
 			color = "black" if matrix[x][y] == 0 else "white" if matrix[x][y] == 1 else "red"
@@ -27,6 +29,15 @@ def LoadMaze2():
 	c.config(width=blockSize * size, height=blockSize * size)
 	DisplayMaze(velikiyrandom.GetFinalMaze(size), size)
 
+def LoadMaze3():
+	size = int(sizeBox.get())
+	c.config(width=blockSize * size, height=blockSize * size)
+	DisplayMaze(mariostyle.GetFinalMaze(size, DisplayMaze), size)
+
+def LoadMaze4():
+	size = int(sizeBox.get())
+	c.config(width=blockSize * size, height=blockSize * size)
+	DisplayMaze(zaebal.GetFinalMaze(size, DisplayMaze), size)
 
 root = Tk()
 root.title("Лабиринт на Python")
@@ -42,7 +53,7 @@ sizeLbl.pack()
 sizeBox = Entry(textvariable="10")
 sizeBox.pack()
 
-btn = Button(text="Создать", command=LoadMaze2)
+btn = Button(text="Создать", command=LoadMaze4)
 btn.pack()
 
 
