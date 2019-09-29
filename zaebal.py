@@ -14,6 +14,7 @@
 
 
 import random
+import time
 
 # Метод для отображения матрици (был необходим во время отладки)
 displayMaze = ""
